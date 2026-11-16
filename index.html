@@ -204,6 +204,33 @@ footer p+p{margin-top:6px}
 .bar{transition:transform .25s}
 .bar.hide{transform:translateY(110%)}
 
+/* mobile and touch fixes */
+.hero .wrap>*{min-width:0}
+summary{padding-inline:4px 10px}
+summary::after{margin-right:10px}
+@media (hover:none){
+  .btn:hover{transform:none;box-shadow:4px 4px 0 var(--coral)}
+  .btn.ghost:hover{box-shadow:4px 4px 0 var(--ink)}
+  .btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--coral)}
+  .btn.ghost:active{box-shadow:1px 1px 0 var(--ink)}
+  .card:hover{transform:none!important;box-shadow:5px 5px 0 var(--ink)}
+  .sticker:hover{transform:rotate(8deg)}
+  .xlink:hover{transform:none}
+}
+@media (max-width:559px){
+  .stage{padding:60px 16px 24px;border-radius:22px}
+  .sticker{right:10px;top:10px;padding:6px 10px;font-size:.72rem}
+  .sticker b{font-size:.85rem}
+  .bubble{font-size:.88rem}
+  .cta-row .btn,.copyrow>.btn{flex:1 1 100%}
+  .field{flex:1 1 100%}
+  .card{padding:18px}
+  .sim{padding:18px}
+  .out b{font-size:1.15rem}
+  .risk{padding:22px 18px}
+  section{padding:48px 0}
+  .bar p small{display:none}
+}
 @media (min-width:860px){
   .hero{padding:56px 0 96px}
   .hero .wrap{grid-template-columns:1.1fr .9fr;gap:64px}
