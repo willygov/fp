@@ -225,23 +225,72 @@ footer p+p{margin-top:6px}
   .ml{position:static;opacity:1!important;transform:none!important;filter:none!important;margin-bottom:60px}.src{position:static;margin-top:20px}
   .top,.bar{transition:none}
 }
+
+/* ===== UX pass: tokens, targets, layout ===== */
+:root{--fs-s:max(.78rem,12px)}
+html{scroll-padding-top:calc(64px + env(safe-area-inset-top))}
+h1,h2,h3{text-wrap:balance}p,li{text-wrap:pretty}
+.skip{position:fixed;left:12px;top:-60px;z-index:200;background:var(--lime);color:#07070a;padding:12px 18px;border-radius:10px;font-weight:600;transition:top .2s}
+.skip:focus{top:calc(8px + env(safe-area-inset-top))}
+.xl{min-height:44px;padding:0 4px}
+.nav{display:none;gap:4px}
+.nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 14px;border-radius:999px;font-size:.9rem;color:var(--muted);text-decoration:none;transition:color .2s,background .2s}
+.nav a:hover,.nav a.on{color:var(--ink);background:rgba(255,255,255,.07)}
+.hud small,.eyebrow,.scroll{font-size:var(--fs-s)}
+.copy{min-height:44px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips button{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--ink);font:500 .85rem var(--pix);cursor:pointer;transition:border-color .2s,background .2s}
+.chips button:hover{border-color:var(--ink)}
+.chips button[aria-pressed=true]{background:var(--coral);border-color:var(--coral);color:#07070a}
+.sim input[type=range]{height:44px}
+.go{display:none;margin-top:14px}.go.show{display:inline-flex}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translate(-50%,20px);opacity:0;z-index:120;background:var(--ink);color:#07070a;padding:10px 18px;border-radius:999px;font-weight:600;font-size:.9rem;pointer-events:none;transition:opacity .25s,transform .25s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (max-width:859px){
+  .hero{padding-bottom:56px}.scroll{display:none}
+  #mascot{width:min(42vw,200px)}.hero-m{padding:18px 0 0}
+  .top{padding-inline:16px}.bar{padding-inline:16px}.wrap{width:min(100% - 32px,1200px)}
+}
+@media (max-height:520px) and (orientation:landscape){
+  .ml h2{font-size:clamp(2rem,9vh,3.4rem)}.ml p{margin-top:8px;font-size:1rem}.src{bottom:64px}
+  .hero{padding-top:70px}.scroll{display:none}#pin{height:260vh}
+}
+@media (min-width:860px){
+  .nav{display:flex}
+  .top{padding-inline:max(28px,calc((100vw - 1200px)/2))}
+  .bar{padding-inline:max(28px,calc((100vw - 1200px)/2));justify-content:space-between;gap:24px}
+  .pre .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+  .pre .wrap>*{grid-column:2}.pre .wrap>.eyebrow,.pre .wrap>.t,.pre .wrap>.sub{grid-column:1}
+  .pre .check{grid-row:1/span 4;margin-top:0}.pre .progw{grid-column:2}
+  .move .wrap{display:grid;grid-template-columns:.9fr 1.1fr;column-gap:64px;align-items:start}
+  .move .wrap>.eyebrow,.move .wrap>.t,.move .wrap>.sub,.move .wrap>.copyrow{grid-column:1}
+  .move .wrap>details{grid-column:2}.move .wrap>footer{grid-column:1/-1}
+  .move details:first-of-type{margin-top:0;grid-row:1}
+  .move .wrap>details{grid-row:auto}
+  .move h2.t{font-size:clamp(3rem,9vw,7.5rem)}
+  .field{flex:1 1 100%}
+}
+@media (min-width:1500px){.wrap{width:min(100% - 80px,1320px)}}
 </style>
 <noscript><style>#pre{display:none}body.loading{overflow:auto}.top,.bar{transform:none}[data-r],.mask>span{opacity:1!important;transform:none!important;filter:none!important}.ml{position:static;opacity:1!important}#pin{height:auto}.pin-in{position:static;height:auto}</style></noscript>
 </head>
 <body class="loading">
+<a class="skip" href="#main">Skip to content</a>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <div id="pre" aria-hidden="true"><div class="ph t"></div><div class="ph b"></div><div class="pc"><b id="pn">0</b><span>FOMO</span></div></div>
 <div class="spot" aria-hidden="true"></div><div class="vig" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
 
-<header class="top">
+<header class="top" role="banner">
   <span class="mark">fomo<i>invite</i></span>
+  <nav class="nav" aria-label="Page"><a href="#steps">Steps</a><a href="#risks">Risks</a><a href="#preflight">Checklist</a><a href="#join">FAQ</a></nav>
   <a class="xl" href="https://x.com/willygov" target="_blank" rel="noopener noreferrer">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
     @willygov
   </a>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
   <section class="hero" data-scene="Opening">
     <div class="wrap">
       <div>
@@ -285,7 +334,7 @@ footer p+p{margin-top:6px}
     </div>
   </div>
 
-  <section class="stack" data-scene="Getting started">
+  <section class="stack" id="steps" data-scene="Getting started">
     <div class="wrap">
       <span class="eyebrow" data-r>Scene 03</span>
       <h2 class="t" data-r>Three steps. <em>Slowly.</em></h2>
@@ -310,8 +359,8 @@ footer p+p{margin-top:6px}
         </ul>
       </div>
       <div class="glass sim" data-r style="--d:.15s">
-        <div><label for="amt">Amount you put in</label><input id="amt" type="number" inputmode="decimal" min="0" step="any" value="100"></div>
-        <div><label for="drop">Price drops by <span id="dropv">50%</span></label><input id="drop" type="range" min="0" max="100" step="1" value="50"></div>
+        <div><label for="amt">Amount you put in</label><input id="amt" type="number" inputmode="decimal" min="0" max="1000000000" step="any" value="100"><div class="chips" role="group" aria-label="Amount presets"><button type="button" data-a="50">$50</button><button type="button" data-a="100" aria-pressed="true">$100</button><button type="button" data-a="500">$500</button></div></div>
+        <div><label for="drop">Price drops by <span id="dropv">50%</span></label><input id="drop" type="range" min="0" max="100" step="1" value="50" aria-describedby="dropv"><div class="chips" role="group" aria-label="Drop presets"><button type="button" data-d="25">-25%</button><button type="button" data-d="50" aria-pressed="true">-50%</button><button type="button" data-d="90">-90%</button></div></div>
         <div class="meter" aria-hidden="true"><i id="bar"></i></div>
         <div class="out">
           <div><small>Left in your account</small><b id="left">$50</b></div>
@@ -323,7 +372,7 @@ footer p+p{margin-top:6px}
     </div>
   </section>
 
-  <section class="pre" data-scene="Preflight">
+  <section class="pre" id="preflight" data-scene="Preflight">
     <div class="wrap">
       <span class="eyebrow" data-r>Scene 05</span>
       <h2 class="t" data-r>Pre<em>flight.</em></h2>
@@ -335,7 +384,7 @@ footer p+p{margin-top:6px}
         <label><input type="checkbox"><span>I picked an amount I can afford to lose completely.</span></label>
         <label><input type="checkbox"><span>I know that following other traders does not guarantee results.</span></label>
       </div>
-      <div class="progw"><div class="meter" aria-hidden="true"><i id="pbar"></i></div><p id="ptext" role="status" aria-live="polite">0 of 5 done</p></div>
+      <div class="progw"><div class="meter" aria-hidden="true"><i id="pbar"></i></div><p id="ptext" role="status" aria-live="polite">0 of 5 done</p><a class="btn go" id="go" href="https://fomo.family/r/willygov" target="_blank" rel="noopener noreferrer sponsored">Open the invite</a></div>
     </div>
   </section>
 
@@ -427,7 +476,7 @@ footer p+p{margin-top:6px}
 
   /* copy field */
   var btn=document.getElementById("copy"),lab=document.getElementById("copyLabel"),u="https://fomo.family/r/willygov",tm;
-  function done(m){btn.classList.toggle("done",m==="Copied");lab.textContent=m;clearTimeout(tm);tm=setTimeout(function(){btn.classList.remove("done");lab.textContent="Copy"},1800)}
+  function done(m){toast(m==="Copied"?"Invite link copied":"Copy failed. Select the link and copy it.");btn.classList.toggle("done",m==="Copied");lab.textContent=m;clearTimeout(tm);tm=setTimeout(function(){btn.classList.remove("done");lab.textContent="Copy"},1800)}
   function legacy(){
     var t=document.createElement("textarea");t.value=u;t.setAttribute("readonly","");
     t.style.cssText="position:fixed;top:0;left:0;opacity:0";document.body.appendChild(t);
@@ -441,6 +490,13 @@ footer p+p{margin-top:6px}
     }else{done(legacy()?"Copied":"Failed")}
   });
 
+  /* ux additions */
+  var toastEl=document.getElementById("toast"),tt;
+  function toast(m){toastEl.textContent=m;toastEl.classList.add("show");clearTimeout(tt);tt=setTimeout(function(){toastEl.classList.remove("show")},1800)}
+  [].forEach.call(document.querySelectorAll(".chips"),function(g){g.addEventListener("click",function(e){
+    var b=e.target.closest("button");if(!b)return;
+    [].forEach.call(g.children,function(x){x.setAttribute("aria-pressed",x===b)});
+    if(b.dataset.a){amt.value=b.dataset.a}else{drop.value=b.dataset.d}sim()})});
   /* risk simulator */
   var amt=document.getElementById("amt"),drop=document.getElementById("drop");
   function money(n){return "$"+n.toLocaleString("en-US",{maximumFractionDigits:2})}
@@ -452,14 +508,15 @@ footer p+p{margin-top:6px}
     document.getElementById("need").textContent=d>=100?"Not possible":"+"+(d/(100-d)*100).toLocaleString("en-US",{maximumFractionDigits:0})+"%";
     document.getElementById("bar").style.width=(100-d)+"%";
   }
-  amt.addEventListener("input",sim);drop.addEventListener("input",sim);sim();
+  function unpress(){[].forEach.call(document.querySelectorAll(".chips button"),function(b){var v=b.dataset.a?amt.value:drop.value,k=b.dataset.a||b.dataset.d;b.setAttribute("aria-pressed",String(parseFloat(v))===parseFloat(k))})}
+  amt.addEventListener("input",function(){sim();unpress()});drop.addEventListener("input",function(){sim();unpress()});sim();
 
   /* checklist */
   var boxes=[].slice.call(document.querySelectorAll(".check input")),pt=document.getElementById("ptext"),pb=document.getElementById("pbar");
   function prog(){
     var c=boxes.filter(function(b){return b.checked}).length;
     pb.style.width=(c/boxes.length*100)+"%";
-    pt.textContent=c===boxes.length?"All set. Start small and stay curious.":c+" of "+boxes.length+" done";
+    document.getElementById("go").classList.toggle("show",c===boxes.length);pt.textContent=c===boxes.length?"All set. Start small and stay curious.":c+" of "+boxes.length+" done";
   }
   boxes.forEach(function(b){b.addEventListener("change",prog)});prog();
 
@@ -469,8 +526,8 @@ footer p+p{margin-top:6px}
     var data={title:document.title,text:"Social-first crypto trading app. Read the risks first.",url:location.href};
     if(navigator.share){navigator.share(data).catch(function(){})}
     else if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(location.href).then(function(){sh.textContent="Page link copied";setTimeout(function(){sh.textContent="Share this page"},1800)});
-    }
+      navigator.clipboard.writeText(location.href).then(function(){toast("Page link copied")},function(){toast("Copy failed. Copy the address bar instead.")});
+    }else{toast("Copy the address bar to share")}
   });
 
 
@@ -519,10 +576,11 @@ footer p+p{margin-top:6px}
   }
   if(reduce){pre.remove();b.classList.remove("loading");b.classList.add("ready");fin=true}
   else{
-    var t0=performance.now(),D=1400;
+    var seen=0;try{seen=sessionStorage.getItem("pre")}catch(e){}try{sessionStorage.setItem("pre","1")}catch(e){}
+    var t0=performance.now(),D=seen?250:800;pre.addEventListener("click",go);
     (function tick(t){var p=clamp((t-t0)/D);pn.textContent=Math.round(p*p*(3-2*p)*100);
-      if(p<1)requestAnimationFrame(tick);else setTimeout(go,150)})(t0);
-    setTimeout(go,4000);
+      if(p<1)requestAnimationFrame(tick);else setTimeout(go,100)})(t0);
+    setTimeout(go,2500);
   }
 
   /* reveals */
@@ -572,7 +630,7 @@ footer p+p{margin-top:6px}
       });
     }
     var idx=0;sc.forEach(function(t,i){if(t<vh*.5)idx=i});
-    if(idx!==cur){cur=idx;hn.textContent=("0"+(idx+1)).slice(-2);hname.textContent=scenes[idx].getAttribute("data-scene")}
+    if(idx!==cur){cur=idx;var map={1:"",2:"#steps",3:"#risks",4:"#preflight",5:"#join"};[].forEach.call(document.querySelectorAll(".nav a"),function(a){a.classList.toggle("on",a.getAttribute("href")===({2:"#steps",3:"#risks",4:"#preflight",5:"#join"})[idx])});hn.textContent=("0"+(idx+1)).slice(-2);hname.textContent=scenes[idx].getAttribute("data-scene")}
   }
   var tk=false;
   addEventListener("scroll",function(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;onScroll()})}},{passive:true});
