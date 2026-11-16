@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Join FOMO with an invite from willygov</title>
+<meta name="description" content="FOMO is a social-first crypto trading app. Join with an invite from willygov, see how to start, and read the risks first.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Join FOMO with an invite from willygov">
+<meta property="og:description" content="A social-first crypto trading app. How to start, and the risks.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 14 10%27 shape-rendering=%27crispEdges%27%3E%3Crect width=%2714%27 height=%2710%27 fill=%27%23c6f432%27/%3E%3Crect x=%274%27 y=%273%27 width=%272%27 height=%272%27 fill=%27%23fff%27/%3E%3Crect x=%278%27 y=%273%27 width=%272%27 height=%272%27 fill=%27%23fff%27/%3E%3Crect x=%275%27 y=%274%27 width=%271%27 height=%271%27 fill=%27%231d1a16%27/%3E%3Crect x=%279%27 y=%274%27 width=%271%27 height=%271%27 fill=%27%231d1a16%27/%3E%3C/svg%3E">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@willygov">
+<meta name="theme-color" content="#f3eee3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16140f" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3eee3; --panel:#fffaf0; --ink:#1d1a16; --muted:#6a6356; --line:#d9d1bf;
+  --lime:#c6f432; --coral:#ff6b57; --lilac:#cdbdff;
+  --accent:#1d1a16; --accent-ink:#f3eee3;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --pix:"Pixelify Sans","Courier New",monospace;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#16140f; --panel:#201d16; --ink:#f3eee3; --muted:#a79f8d; --line:#35312a;
+    --accent:#c6f432; --accent-ink:#16140f;
+  }
+}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+a,button,summary,#mascot,.sticker,.card{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+:focus:not(:focus-visible){outline:none}
+::selection{background:var(--lime);color:#1d1a16}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--ink);font:400 1rem/1.6 var(--head);
+  padding:env(safe-area-inset-top) 0 calc(env(safe-area-inset-bottom) + 84px);overflow-x:hidden;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:6px}
+.wrap{width:min(100% - 40px,1000px);margin-inline:auto}
+.pix{font-family:var(--pix)}
+
+/* header */
+.top{padding:20px 0}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.mark{font:700 1.15rem var(--pix);letter-spacing:.01em}
+.mark i{font-style:normal;background:var(--lime);color:#1d1a16;padding:0 6px;border-radius:4px;margin-left:2px}
+.xlink{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:500;font-size:.92rem;
+  padding:8px 14px;border:2px solid var(--ink);border-radius:999px;background:var(--panel);transition:transform .15s}
+.xlink:hover{transform:translateY(-2px) rotate(-1deg)}
+.xlink svg{width:14px;height:14px;fill:currentColor}
+
+/* hero */
+.hero{padding:24px 0 64px}
+.hero .wrap{display:grid;gap:40px;align-items:center}
+h1{font:800 clamp(2.2rem,9vw,4.2rem)/1.02 var(--head);letter-spacing:-.04em}
+h1 mark{background:var(--lime);color:#1d1a16;padding:0 .12em;border-radius:.14em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.lead{margin-top:20px;max-width:44ch;color:var(--muted);font-size:1.1rem}
+.cta-row{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;
+  border:2px solid var(--ink);border-radius:14px;background:var(--accent);color:var(--accent-ink);
+  font:700 1rem var(--head);text-decoration:none;cursor:pointer;
+  box-shadow:4px 4px 0 var(--coral);transition:transform .12s,box-shadow .12s;
+}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--coral)}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--coral)}
+.btn.ghost{background:var(--panel);color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.btn.ghost:hover{box-shadow:6px 6px 0 var(--ink)}
+.btn.ghost:active{box-shadow:1px 1px 0 var(--ink)}
+.btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.fine{margin-top:16px;font-size:.85rem;color:var(--muted);max-width:50ch}
+
+/* stage with mascot */
+.stage{
+  position:relative;background:var(--panel);border:2px solid var(--ink);border-radius:28px;
+  padding:48px 24px 28px;display:grid;place-items:center;overflow:hidden;
+  background-image:radial-gradient(var(--line) 1.5px,transparent 1.5px);background-size:18px 18px;
+}
+.bubble{
+  position:relative;font:500 .95rem var(--pix);background:var(--bg);border:2px solid var(--ink);border-radius:12px;
+  padding:8px 14px;margin-bottom:18px;max-width:90%;text-align:center
+}
+.bubble::after{content:"";position:absolute;left:50%;bottom:-9px;width:14px;height:14px;background:var(--bg);
+  border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:translateX(-50%) rotate(45deg)}
+#mascot{width:min(62%,230px);height:auto;cursor:pointer;image-rendering:pixelated;touch-action:manipulation;
+  filter:drop-shadow(0 8px 0 rgba(0,0,0,.12))}
+#mascot.hop{animation:hop .45s ease-out}
+@keyframes hop{0%{transform:translateY(0)}40%{transform:translateY(-26px) scaleY(1.06)}70%{transform:translateY(0) scaleY(.92)}100%{transform:none}}
+.floor{width:62%;max-width:230px;height:8px;margin-top:6px;border-radius:50%;background:rgba(0,0,0,.14);filter:blur(1px)}
+.sticker{
+  position:absolute;right:14px;top:14px;transform:rotate(8deg);transition:transform .25s cubic-bezier(.3,1.6,.5,1);
+  background:var(--lilac);color:#1d1a16;border:3px solid #fff;border-radius:16px;padding:8px 12px;
+  font:700 .8rem/1.15 var(--pix);box-shadow:0 0 0 2px #1d1a16,3px 4px 0 2px rgba(0,0,0,.25);text-align:center;cursor:default
+}
+.sticker:hover{transform:rotate(-4deg) scale(1.08) translateY(-3px)}
+.sticker b{display:block;font-size:1rem}
+
+/* sections */
+section{padding:64px 0;border-top:2px solid var(--ink)}
+h2{font:800 clamp(1.6rem,5.4vw,2.4rem)/1.08 var(--head);letter-spacing:-.035em;max-width:18ch}
+.sub{margin-top:12px;color:var(--muted);max-width:52ch}
+
+.cards{margin-top:32px;display:grid;gap:18px}
+.card{
+  background:var(--panel);border:2px solid var(--ink);border-radius:20px;padding:22px;
+  box-shadow:5px 5px 0 var(--ink);transition:transform .18s,box-shadow .18s;
+}
+.card:nth-child(1):hover{transform:rotate(-1.2deg) translateY(-4px)}
+.card:nth-child(2):hover{transform:rotate(.9deg) translateY(-4px)}
+.card:nth-child(3):hover{transform:rotate(-.7deg) translateY(-4px)}
+.card:hover{box-shadow:8px 9px 0 var(--ink)}
+.chip{display:inline-block;font:700 .8rem var(--pix);padding:3px 10px;border-radius:999px;border:2px solid var(--ink);margin-bottom:14px}
+.card:nth-child(1) .chip{background:var(--lime);color:#1d1a16}
+.card:nth-child(2) .chip{background:var(--coral);color:#1d1a16}
+.card:nth-child(3) .chip{background:var(--lilac);color:#1d1a16}
+.card h3{font:700 1.25rem/1.2 var(--head);letter-spacing:-.02em}
+.card p{margin-top:8px;color:var(--muted)}
+
+.feat{margin-top:32px;display:grid;gap:0;border-top:2px solid var(--ink)}
+.feat div{display:grid;grid-template-columns:20px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+.feat i{width:14px;height:14px;margin-top:7px;background:var(--coral);box-shadow:3px 3px 0 var(--ink)}
+.feat div:nth-child(2) i{background:var(--lime)}
+.feat div:nth-child(3) i{background:var(--lilac)}
+.feat b{display:block;font-size:1.1rem}
+.feat span{color:var(--muted);max-width:52ch;display:block}
+
+.risk{background:var(--coral);color:#1d1a16;border:2px solid var(--ink);border-radius:24px;padding:28px 22px;box-shadow:6px 6px 0 var(--ink)}
+.risk h2{max-width:none;font-size:1.6rem}
+.risk ul{margin:14px 0 0 1.1em;padding:0;display:grid;gap:8px;font-weight:500}
+
+.copyrow{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+.field{
+  flex:1 1 260px;min-height:54px;display:flex;align-items:center;gap:10px;padding:0 8px 0 16px;
+  background:var(--panel);border:2px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--ink)
+}
+.field code{flex:1;font:500 .95rem var(--pix);overflow-wrap:anywhere;padding:6px 0}
+.copy{
+  min-height:40px;min-width:92px;padding:0 14px;border:2px solid var(--ink);border-radius:10px;background:var(--lime);color:#1d1a16;
+  font:700 .88rem var(--head);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:background .2s,transform .12s
+}
+.copy:active{transform:scale(.95)}
+.copy svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.copy .ok{display:none}
+.copy.done{background:#fff}
+.copy.done .ok{display:block}.copy.done .cp{display:none}
+
+details{border-bottom:2px solid var(--ink)}
+details:first-of-type{margin-top:36px;border-top:2px solid var(--ink)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 0;min-height:56px;font-weight:700;font-size:1.05rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";display:grid;place-items:center;width:30px;height:30px;border:2px solid var(--ink);border-radius:8px;background:var(--lime);color:#1d1a16;font:700 1.2rem/1 var(--pix);flex:none;transition:transform .25s}
+details.is-open summary::after{transform:rotate(135deg);background:var(--coral)}
+details p{padding:0 0 18px;color:var(--muted);max-width:58ch}
+
+footer{padding:28px 0 8px;border-top:2px solid var(--ink);font-size:.84rem;color:var(--muted)}
+footer p+p{margin-top:6px}
+
+.bar{
+  position:fixed;inset:auto 0 0 0;z-index:20;display:flex;gap:12px;align-items:center;justify-content:space-between;
+  padding:10px 20px calc(10px + env(safe-area-inset-bottom));
+  background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-top:2px solid var(--ink)
+}
+.bar p{font-weight:700;font-size:.9rem;line-height:1.25}
+.bar p small{display:block;font:400 .78rem var(--pix);color:var(--muted)}
+.bar .btn{min-height:44px;padding:0 20px;flex:none}
+
+
+/* simulator */
+.sim{margin-top:28px;background:var(--panel);border:2px solid var(--ink);border-radius:20px;padding:22px;box-shadow:5px 5px 0 var(--ink);display:grid;gap:20px}
+.sim label{font-weight:700;display:flex;justify-content:space-between;gap:12px;margin-bottom:8px}
+.sim label span{font-family:var(--pix);color:var(--coral)}
+.sim input[type=number]{width:100%;min-height:50px;border:2px solid var(--ink);border-radius:12px;background:var(--bg);color:var(--ink);font:700 1.15rem var(--pix);padding:0 14px}
+.sim input[type=range]{width:100%;height:32px;accent-color:var(--coral);cursor:pointer}
+.meter{height:22px;border:2px solid var(--ink);border-radius:11px;overflow:hidden;background:var(--coral)}
+.meter i{display:block;height:100%;width:50%;background:var(--lime);transition:width .2s}
+.out{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.out div{border:2px solid var(--ink);border-radius:14px;padding:12px 14px;background:var(--bg)}
+.out small{display:block;color:var(--muted);font-size:.8rem;line-height:1.3}
+.out b{font:700 1.35rem var(--pix);overflow-wrap:anywhere}
+.out .wide{grid-column:1/-1}
+.note{font-size:.82rem;color:var(--muted)}
+
+/* checklist */
+.check{margin-top:28px;display:grid;gap:10px}
+.check label{display:grid;grid-template-columns:28px 1fr;gap:14px;align-items:center;padding:14px 16px;border:2px solid var(--ink);border-radius:14px;background:var(--panel);cursor:pointer;min-height:56px;transition:transform .15s}
+.check label:active{transform:scale(.99)}
+.check input{-webkit-appearance:none;appearance:none;width:28px;height:28px;border:2px solid var(--ink);border-radius:8px;background:var(--bg);margin:0;display:grid;place-content:center;cursor:pointer}
+.check input::after{content:"";width:13px;height:7px;border-left:3px solid #1d1a16;border-bottom:3px solid #1d1a16;transform:rotate(-45deg) scale(0);transition:transform .15s;margin-top:-3px}
+.check input:checked{background:var(--lime)}
+.check input:checked::after{transform:rotate(-45deg) scale(1)}
+.prog{margin-top:20px;display:grid;gap:8px}
+.prog .meter{background:var(--panel)}
+.prog .meter i{width:0}
+.prog p{font:500 .95rem var(--pix)}
+
+.bar{transition:transform .25s}
+.bar.hide{transform:translateY(110%)}
+
+@media (min-width:860px){
+  .hero{padding:56px 0 96px}
+  .hero .wrap{grid-template-columns:1.1fr .9fr;gap:64px}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .stage{padding:56px 32px 36px}
+  .bar{justify-content:center;gap:32px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <span class="mark">fomo<i>invite</i></span>
+    <a class="xlink" href="https://x.com/willygov" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      @willygov
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Trade crypto <mark>together</mark>, not alone.</h1>
+        <p class="lead">FOMO is a social-first trading app. Follow what other traders do, check the leaderboard, and trade from one account.</p>
+        <div class="cta-row">
+          <a class="btn" href="https://fomo.family/r/willygov" target="_blank" rel="noopener noreferrer sponsored">
+            Join with my invite
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+          <a class="btn ghost" href="#risks">Read the risks</a>
+        </div>
+        <p class="fine">This is a referral link from willygov. I may receive a reward if you sign up through it.</p>
+      </div>
+
+      <div class="stage">
+        <div class="sticker" aria-hidden="true"><b>Invited by</b>@willygov</div>
+        <div class="bubble" id="bubble" role="status" aria-live="polite">Psst. Do your own research.</div>
+        <svg id="mascot" viewBox="0 0 14 10" role="img" aria-label="Pixel mascot. Tap it to make it hop." shape-rendering="crispEdges" tabindex="0"></svg>
+        <div class="floor"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section>
+      <h2>How to get started</h2>
+      <p class="sub">Three steps. Take your time on the last one.</p>
+      <div class="cards">
+        <div class="card"><span class="chip">Step 1</span><h3>Open the invite</h3><p>Tap the button above. Check that the address says fomo.family.</p></div>
+        <div class="card"><span class="chip">Step 2</span><h3>Create your account</h3><p>Follow the sign-up flow in the app or on the official website.</p></div>
+        <div class="card"><span class="chip">Step 3</span><h3>Look around first</h3><p>Browse the feed, read the fees, and only then add funds.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What is inside</h2>
+      <p class="sub">Based on how FOMO describes itself: a social-first trading platform that supports several blockchains.</p>
+      <div class="feat">
+        <div><i></i><span><b>Activity feed</b>See what people you follow are buying and selling, like a timeline.</span></div>
+        <div><i></i><span><b>Leaderboard and profiles</b>Compare traders and study how they play before you decide anything.</span></div>
+        <div><i></i><span><b>Self-custody wallet</b>FOMO calls itself self-custodial, so you hold the keys. Store them safely.</span></div>
+      </div>
+    </section>
+
+    <section id="risks">
+      <div class="risk">
+        <h2>Read this before you start</h2>
+        <ul>
+          <li>Crypto prices, especially new tokens, can fall fast. You can lose everything you put in.</li>
+          <li>Watching other traders does not guarantee the same results.</li>
+          <li>Only use money you can afford to lose.</li>
+          <li>Watch out for fake sites. Check the address is fomo.family before you log in.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="simulator">
+      <h2>See what a drop really does</h2>
+      <p class="sub">Move the sliders to see how a price fall affects your money. An illustration, not a prediction.</p>
+      <div class="sim">
+        <div>
+          <label for="amt">Amount you put in</label>
+          <input id="amt" type="number" inputmode="decimal" min="0" step="any" value="100">
+        </div>
+        <div>
+          <label for="drop">Price drops by <span id="dropv">50%</span></label>
+          <input id="drop" type="range" min="0" max="100" step="1" value="50">
+        </div>
+        <div class="meter" aria-hidden="true"><i id="bar"></i></div>
+        <div class="out">
+          <div><small>Left in your account</small><b id="left">$50</b></div>
+          <div><small>Loss</small><b id="loss">$50</b></div>
+          <div class="wide"><small>Gain needed just to get back to even</small><b id="need">+100%</b></div>
+        </div>
+        <p class="note">Losing half of your money means you need to double what is left to recover. Fees are not included.</p>
+      </div>
+    </section>
+
+    <section id="checklist">
+      <h2>Before you add funds</h2>
+      <p class="sub">Tick each one honestly. Nothing is saved or sent anywhere.</p>
+      <div class="check">
+        <label><input type="checkbox"><span>I opened the invite and checked that the address says fomo.family.</span></label>
+        <label><input type="checkbox"><span>I read the fees and terms inside the app.</span></label>
+        <label><input type="checkbox"><span>I saved my wallet keys or recovery phrase offline and will never share them.</span></label>
+        <label><input type="checkbox"><span>I picked an amount I can afford to lose completely.</span></label>
+        <label><input type="checkbox"><span>I know that following other traders does not guarantee results.</span></label>
+      </div>
+      <div class="prog">
+        <div class="meter" aria-hidden="true"><i id="pbar"></i></div>
+        <p id="ptext" role="status" aria-live="polite">0 of 5 done</p>
+      </div>
+    </section>
+
+    <section id="join">
+      <h2>Ready to join?</h2>
+      <p class="sub">Open the invite, or copy the link to use on another device.</p>
+      <div class="copyrow">
+        <div class="field">
+          <code id="ref">https://fomo.family/r/willygov</code>
+          <button class="copy" id="copy" type="button" aria-label="Copy invite link">
+            <svg class="cp" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+            <svg class="ok" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>
+            <span id="copyLabel">Copy</span>
+          </button>
+        </div>
+        <a class="btn" href="https://fomo.family/r/willygov" target="_blank" rel="noopener noreferrer sponsored">Open FOMO</a>
+        <button class="btn ghost" id="share" type="button">Share this page</button>
+      </div>
+
+      <details>
+        <summary>Is FOMO available in my country?</summary>
+        <p>Availability and rules differ by country. Check FOMO's terms and your local regulations before you sign up.</p>
+      </details>
+      <details>
+        <summary>What does self-custody mean?</summary>
+        <p>You control the wallet keys instead of a company holding your funds. If you lose your keys, nobody can restore access, so back them up offline.</p>
+      </details>
+      <details>
+        <summary>What is a memecoin?</summary>
+        <p>A token driven mostly by community and hype rather than a product. Prices can swing hard, so treat them as high risk.</p>
+      </details>
+      <details>
+        <summary>Does this link cost me extra?</summary>
+        <p>No. The link only opens the invite page. Fees are set by FOMO, so check the latest terms in the app or on their site.</p>
+      </details>
+      <details>
+        <summary>What does willygov get out of this?</summary>
+        <p>It is a referral program. If you sign up through this link, I may receive a reward under FOMO's rules.</p>
+      </details>
+      <details>
+        <summary>Where can I ask questions?</summary>
+        <p>Message me on X at <a href="https://x.com/willygov" target="_blank" rel="noopener noreferrer">@willygov</a>.</p>
+      </details>
+    </section>
+
+    <footer>
+      <p>Personal page by willygov. Not officially affiliated with FOMO.</p>
+      <p>Not financial advice. Do your own research.</p>
+    </footer>
+  </div>
+</main>
+
+<div class="bar">
+  <p>Invite from @willygov<small>fomo.family</small></p>
+  <a class="btn" href="https://fomo.family/r/willygov" target="_blank" rel="noopener noreferrer sponsored">Join</a>
+</div>
+
+<script>
+(function(){
+  /* pixel mascot */
+  var body=[
+    "....kkkkkk....",
+    "..kkggggggkk..",
+    ".kggggggggggk.",
+    ".kggggggggggk.",
+    "kggggggggggggk",
+    "kggggggggggggk",
+    "kggggggggggggk",
+    "kggggggggggggk",
+    ".kggggggggggk.",
+    ".kkkkkkkkkkkk."
+  ];
+  var pal={k:"#1d1a16",g:"#c6f432"};
+  var NS="http://www.w3.org/2000/svg",svg=document.getElementById("mascot");
+  function rect(x,y,w,h,f){var r=document.createElementNS(NS,"rect");r.setAttribute("x",x);r.setAttribute("y",y);r.setAttribute("width",w);r.setAttribute("height",h);r.setAttribute("fill",f);svg.appendChild(r);return r}
+  body.forEach(function(row,y){for(var x=0;x<row.length;x++){var c=row[x];if(c!=="."){rect(x,y,1,1,pal[c])}}});
+  rect(2,6,2,1,"#ff6b57");rect(10,6,2,1,"#ff6b57");rect(6,7,2,1,"#1d1a16");
+  var eyes=[[4,3],[8,3]],pupils=[],lids=[];
+  eyes.forEach(function(e){
+    rect(e[0],e[1],2,2,"#ffffff");
+    pupils.push(rect(e[0],e[1],1,1,"#1d1a16"));
+    var l=rect(e[0],e[1],2,2,"#c6f432");l.style.display="none";lids.push(l);
+  });
+  function look(cx,cy){
+    var b=svg.getBoundingClientRect(),mx=b.left+b.width/2,my=b.top+b.height*0.4;
+    var dx=cx>mx+12?1:0,dy=cy>my+12?1:0;
+    pupils.forEach(function(p,i){p.setAttribute("x",eyes[i][0]+dx);p.setAttribute("y",eyes[i][1]+dy)});
+  }
+  addEventListener("pointermove",function(e){look(e.clientX,e.clientY)},{passive:true});
+  function blink(){
+    lids.forEach(function(l){l.style.display=""});
+    setTimeout(function(){lids.forEach(function(l){l.style.display="none"})},140);
+    setTimeout(blink,2200+Math.random()*2800);
+  }
+  setTimeout(blink,2000);
+  var lines=["Psst. Do your own research.","Never trade money you need.","Check the address says fomo.family.","Hi! Tap me again.","Take a look around first."],n=0,bub=document.getElementById("bubble");
+  function poke(){
+    svg.classList.remove("hop");void svg.getBoundingClientRect();svg.classList.add("hop");
+    n=(n+1)%lines.length;bub.textContent=lines[n];
+  }
+  svg.addEventListener("click",poke);
+  svg.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();poke()}});
+
+  /* copy field */
+  var btn=document.getElementById("copy"),lab=document.getElementById("copyLabel"),u="https://fomo.family/r/willygov",tm;
+  function done(m){btn.classList.add("done");lab.textContent=m;clearTimeout(tm);tm=setTimeout(function(){btn.classList.remove("done");lab.textContent="Copy"},1800)}
+  btn.addEventListener("click",function(){
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(u).then(function(){done("Copied")},function(){done("Select")});
+    }else{
+      var r=document.createRange();r.selectNodeContents(document.getElementById("ref"));
+      var s=getSelection();s.removeAllRanges();s.addRange(r);done("Select");
+    }
+  });
+
+  /* risk simulator */
+  var amt=document.getElementById("amt"),drop=document.getElementById("drop");
+  function money(n){return "$"+n.toLocaleString("en-US",{maximumFractionDigits:2})}
+  function sim(){
+    var a=Math.max(0,parseFloat(amt.value)||0),d=+drop.value,left=a*(1-d/100);
+    document.getElementById("dropv").textContent=d+"%";
+    document.getElementById("left").textContent=money(left);
+    document.getElementById("loss").textContent=money(a-left);
+    document.getElementById("need").textContent=d>=100?"Not possible":"+"+(d/(100-d)*100).toLocaleString("en-US",{maximumFractionDigits:0})+"%";
+    document.getElementById("bar").style.width=(100-d)+"%";
+  }
+  amt.addEventListener("input",sim);drop.addEventListener("input",sim);sim();
+
+  /* checklist */
+  var boxes=[].slice.call(document.querySelectorAll(".check input")),pt=document.getElementById("ptext"),pb=document.getElementById("pbar");
+  function prog(){
+    var c=boxes.filter(function(b){return b.checked}).length;
+    pb.style.width=(c/boxes.length*100)+"%";
+    pt.textContent=c===boxes.length?"All set. Start small and stay curious.":c+" of "+boxes.length+" done";
+  }
+  boxes.forEach(function(b){b.addEventListener("change",prog)});prog();
+
+  /* share */
+  var sh=document.getElementById("share");
+  sh.addEventListener("click",function(){
+    var data={title:document.title,text:"Social-first crypto trading app. Read the risks first.",url:location.href};
+    if(navigator.share){navigator.share(data).catch(function(){})}
+    else if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(location.href).then(function(){sh.textContent="Page link copied";setTimeout(function(){sh.textContent="Share this page"},1800)});
+    }
+  });
+
+
+  /* smooth FAQ open and close */
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  [].slice.call(document.querySelectorAll("details")).forEach(function(d){
+    var sum=d.querySelector("summary"),body=d.querySelector("p"),anim=null;
+    sum.addEventListener("click",function(e){
+      e.preventDefault();
+      if(reduce||!d.animate){d.open=!d.open;d.classList.toggle("is-open",d.open);return}
+      var h0=d.getBoundingClientRect().height;
+      if(anim){anim.cancel();anim=null}
+      var opening=!d.classList.contains("is-open"),end;
+      d.style.overflow="hidden";
+      if(opening){
+        d.open=true;d.classList.add("is-open");
+        end=d.getBoundingClientRect().height;
+        if(body)body.animate([{opacity:0,transform:"translateY(-8px)"},{opacity:1,transform:"none"}],{duration:320,delay:80,easing:"ease-out",fill:"backwards"});
+      }else{
+        d.classList.remove("is-open");
+        var cs=getComputedStyle(d);
+        end=sum.getBoundingClientRect().height+parseFloat(cs.borderTopWidth)+parseFloat(cs.borderBottomWidth);
+      }
+      anim=d.animate([{height:h0+"px"},{height:end+"px"}],{duration:340,easing:"cubic-bezier(.3,.9,.3,1)"});
+      anim.onfinish=function(){if(!opening)d.open=false;d.style.overflow="";anim=null};
+    });
+  });
+
+  /* hide sticky bar while the join section is visible */
+  var bar=document.querySelector(".bar"),jn=document.getElementById("join");
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(es){bar.classList.toggle("hide",es[0].isIntersecting)},{threshold:.25}).observe(jn);
+  }
+})();
+</script>
+</body>
+</html>
