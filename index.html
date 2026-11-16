@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Join FOMO with an invite from willygov</title>
+<title>Pick a guide from willygov</title>
 <meta name="description" content="A cinematic walkthrough of FOMO, the social-first crypto trading app. Join with an invite from willygov and read the risks first.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#07070a">
-<meta property="og:title" content="Join FOMO with an invite from willygov">
+<meta property="og:title" content="Two guides from willygov: FOMO and pump.fun">
 <meta property="og:description" content="A social-first crypto trading app. How to start, and the risks.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
@@ -226,6 +226,67 @@ footer p+p{margin-top:6px}
   .top,.bar{transition:none}
 }
 
+body[data-mode=pump]{--lime:#5df2a0}
+.mode{display:inline-flex;padding:3px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.06)}
+.mode button{min-height:40px;padding:0 14px;border:0;border-radius:999px;background:none;color:var(--muted);font:600 .84rem var(--body);cursor:pointer;transition:background .2s,color .2s}
+.mode button[aria-pressed=true]{background:var(--lime);color:#07070a}
+@media (max-width:559px){.xl{display:none}}
+#pick{position:fixed;inset:0;z-index:95;background:var(--bg) radial-gradient(800px 480px at 80% 20%,rgba(155,134,255,.16),transparent 70%);overflow-y:auto;display:grid;place-items:center;padding:calc(24px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom))}
+#pick[hidden]{display:none}
+body.picking{overflow:hidden}
+.pk{width:min(100%,920px)}
+.pk h2{font:400 clamp(2.6rem,10vw,5.5rem)/.98 var(--disp);text-transform:uppercase}
+.pk h2 em{font:italic 400 1em/.98 var(--serif);text-transform:none;color:var(--lime)}
+.pkg{display:grid;gap:14px;margin:26px 0 18px}
+.pc{display:flex;flex-direction:column;gap:10px;text-align:left;padding:24px;min-height:190px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(150deg,#16161b,#0b0b0e);color:var(--ink);cursor:pointer;font:inherit;transition:border-color .2s,transform .2s var(--ease)}
+.pc:hover{border-color:var(--c);transform:translateY(-3px)}
+.pc.f{--c:#c6f432}.pc.p{--c:#5df2a0}
+.pc b{font:400 clamp(2rem,7vw,3rem)/1 var(--disp);text-transform:uppercase;color:var(--c)}
+.pc span{color:var(--muted);max-width:36ch}
+.pc i{margin-top:auto;font:600 .95rem var(--body);font-style:normal;color:var(--ink)}
+.pc i::after{content:" \2192"}
+@media (hover:none){.pc:hover{transform:none}}
+@media (min-width:700px){.pkg{grid-template-columns:1fr 1fr}.pc{min-height:260px}}
+
+/* ===== pump.fun concept: terminal-style, square, mint ===== */
+.curve{display:none}
+body[data-mode=pump]{--bg:#040e0a;--panel:#0a1a13;--line:rgba(93,242,160,.2);--coral:#ff4d8d;--lilac:#ffd84d;--disp:"Pixelify Sans","Courier New",monospace}
+body[data-mode=pump] .spot{background:radial-gradient(circle,rgba(93,242,160,.1),transparent 62%)}
+body[data-mode=pump] .grain{display:none}
+body[data-mode=pump] .vig{background:linear-gradient(rgba(93,242,160,.05) 1px,transparent 1px) 0 0/100% 32px,linear-gradient(90deg,rgba(93,242,160,.05) 1px,transparent 1px) 0 0/32px 100%}
+body[data-mode=pump] h1{font-weight:700;font-size:clamp(2.6rem,12.5vw,6.5rem);line-height:1;letter-spacing:-.02em;text-transform:none}
+body[data-mode=pump] h1 em{font:700 1em/1 var(--disp);color:var(--lime)}
+body[data-mode=pump] .ml h2,body[data-mode=pump] h2.t,body[data-mode=pump] .pk h2{font-weight:700;text-transform:none;line-height:1.05;letter-spacing:-.02em}
+body[data-mode=pump] .ml h2{font-size:clamp(2.2rem,9vw,5.5rem);max-width:16ch}
+body[data-mode=pump] h2.t{font-size:clamp(2rem,7vw,4.2rem);max-width:18ch}
+body[data-mode=pump] .move h2.t{font-size:clamp(2.4rem,9vw,5.5rem)}
+body[data-mode=pump] h2 em{font:700 1em/1 var(--disp)}
+body[data-mode=pump] .sc h3,body[data-mode=pump] .out b{font-weight:700;text-transform:none}
+body[data-mode=pump] .btn,body[data-mode=pump] .copy,body[data-mode=pump] .field,body[data-mode=pump] .bubble,body[data-mode=pump] .chips button,body[data-mode=pump] .sim input[type=number]{border-radius:10px}
+body[data-mode=pump] .btn{box-shadow:4px 4px 0 rgba(93,242,160,.35)}
+body[data-mode=pump] .btn.ghost{box-shadow:none}
+body[data-mode=pump] .btn:hover{box-shadow:6px 6px 0 rgba(93,242,160,.5)}
+body[data-mode=pump] .glass,body[data-mode=pump] .sc,body[data-mode=pump] .check label,body[data-mode=pump] .out div{border-radius:12px}
+body[data-mode=pump] .eyebrow{text-transform:none;letter-spacing:.02em}
+body[data-mode=pump] #mascot,body[data-mode=pump] .sticker{display:none}
+body[data-mode=pump] .curve{display:block;width:min(80vw,420px);height:auto;color:var(--lime);filter:drop-shadow(0 0 18px rgba(93,242,160,.35))}
+body[data-mode=pump] .cv{stroke-dasharray:420;stroke-dashoffset:0;animation:draw 2.2s var(--ease) both}
+@keyframes draw{from{stroke-dashoffset:420}}
+body[data-mode=pump] .stack .wrap{display:grid;gap:14px}
+body[data-mode=pump] .stack .sc{position:static;transform:none!important;margin-top:0;min-height:0;flex-direction:column;gap:18px}
+body[data-mode=pump] .stack .sc::after{display:none}
+body[data-mode=pump] .stack .sc i{font:700 2.4rem/1 var(--pix);-webkit-text-stroke:0;color:var(--c,var(--lime))}
+body[data-mode=pump] .stack .wrap>:not(.sc){grid-column:1/-1}
+@media (min-width:860px){body[data-mode=pump] .stack .wrap{grid-template-columns:repeat(3,1fr);gap:18px}body[data-mode=pump] .stack .sc{padding:28px}}
+
+/* ===== pump.fun: flat solid, no transparency ===== */
+body[data-mode=pump] .hero .wrap{grid-template-columns:1fr}
+body[data-mode=pump] .hero-m{display:none}
+body[data-mode=pump] .hero h1{font-size:clamp(3rem,15vw,9rem)}
+body[data-mode=pump] .hero,body[data-mode=pump] #pin{background:#040e0a}
+body[data-mode=pump] .stack,body[data-mode=pump] .pre{background:#07150f}
+body[data-mode=pump] .twist,body[data-mode=pump] .move{background:#040e0a}
+body[data-mode=pump] .sc,body[data-mode=pump] .glass,body[data-mode=pump] .check label{background:#0d2218}
 /* ===== UX pass: tokens, targets, layout ===== */
 :root{--fs-s:max(.78rem,12px)}
 html{scroll-padding-top:calc(64px + env(safe-area-inset-top))}
@@ -276,14 +337,27 @@ h1,h2,h3{text-wrap:balance}p,li{text-wrap:pretty}
 </head>
 <body class="loading">
 <a class="skip" href="#main">Skip to content</a>
+<div id="pick" role="dialog" aria-modal="true" aria-labelledby="pickh">
+  <div class="pk">
+    <span class="eyebrow">A guide from @willygov</span>
+    <h2 id="pickh">Pick your <em>guide.</em></h2>
+    <p class="sub">Both start with the risks. You can switch any time from the top bar.</p>
+    <div class="pkg">
+      <button type="button" data-pick="fomo" class="pc f"><b>FOMO</b><span>A social trading app. Follow other traders and compare the leaderboard.</span><i>Open the FOMO guide</i></button>
+      <button type="button" data-pick="pump" class="pc p"><b>pump.fun</b><span>A Solana memecoin launchpad. Higher risk, so read the warnings first.</span><i>Open the pump.fun guide</i></button>
+    </div>
+    <p class="note">Not financial advice. Do your own research.</p>
+  </div>
+</div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<div id="pre" aria-hidden="true"><div class="ph t"></div><div class="ph b"></div><div class="pc"><b id="pn">0</b><span>FOMO</span></div></div>
+<div id="pre" aria-hidden="true"><div class="ph t"></div><div class="ph b"></div><div class="pc"><b id="pn">0</b><span>@WILLYGOV</span></div></div>
 <div class="spot" aria-hidden="true"></div><div class="vig" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
 
 <header class="top" role="banner">
   <span class="mark">fomo<i>invite</i></span>
   <nav class="nav" aria-label="Page"><a href="#steps">Steps</a><a href="#risks">Risks</a><a href="#preflight">Checklist</a><a href="#join">FAQ</a></nav>
+  <div class="mode" role="group" aria-label="Choose guide"><button type="button" data-mode="fomo" aria-pressed="true">FOMO</button><button type="button" data-mode="pump" aria-pressed="false">pump.fun</button></div>
   <a class="xl" href="https://x.com/willygov" target="_blank" rel="noopener noreferrer">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
     @willygov
@@ -472,13 +546,14 @@ h1,h2,h3{text-wrap:balance}p,li{text-wrap:pretty}
     n=(n+1)%lines.length;bub.textContent=lines[n];
   }
   svg.addEventListener("click",poke);
+  window.__fl=lines;window.setLines=function(a){lines=a;n=0;bub.textContent=a[0]};
   svg.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();poke()}});
 
   /* copy field */
-  var btn=document.getElementById("copy"),lab=document.getElementById("copyLabel"),u="https://fomo.family/r/willygov",tm;
+  var btn=document.getElementById("copy"),lab=document.getElementById("copyLabel"),tm;function U(){return document.getElementById("ref").title}
   function done(m){toast(m==="Copied"?"Invite link copied":"Copy failed. Select the link and copy it.");btn.classList.toggle("done",m==="Copied");lab.textContent=m;clearTimeout(tm);tm=setTimeout(function(){btn.classList.remove("done");lab.textContent="Copy"},1800)}
   function legacy(){
-    var t=document.createElement("textarea");t.value=u;t.setAttribute("readonly","");
+    var t=document.createElement("textarea");t.value=U();t.setAttribute("readonly","");
     t.style.cssText="position:fixed;top:0;left:0;opacity:0";document.body.appendChild(t);
     t.select();t.setSelectionRange(0,t.value.length);
     var ok=false;try{ok=document.execCommand("copy")}catch(e){}
@@ -486,7 +561,7 @@ h1,h2,h3{text-wrap:balance}p,li{text-wrap:pretty}
   }
   btn.addEventListener("click",function(){
     if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(u).then(function(){done("Copied")},function(){done(legacy()?"Copied":"Failed")});
+      navigator.clipboard.writeText(U()).then(function(){done("Copied")},function(){done(legacy()?"Copied":"Failed")});
     }else{done(legacy()?"Copied":"Failed")}
   });
 
@@ -637,5 +712,57 @@ h1,h2,h3{text-wrap:balance}p,li{text-wrap:pretty}
   addEventListener("resize",onScroll);onScroll();
 })();
 </script>
+
+<script>
+(function(){
+  var D=document,B=D.body,Q=function(s){return [].slice.call(D.querySelectorAll(s))},slots=[];
+  function add(el,t){slots.push([el,t||"h"])}
+  add(Q(".mark")[0]);add(Q(".hero .eyebrow")[0]);Q(".hero h1 .mask>span").forEach(function(e){add(e)});
+  add(Q(".lead")[0]);add(Q(".hero .cta-row .btn")[0],"t");add(Q(".fine")[0]);add(Q(".sticker")[0]);
+  Q(".ml").forEach(function(m){add(m.querySelector(".eyebrow"));add(m.querySelector("h2"));add(m.querySelector("p"))});
+  add(Q(".src")[0]);add(Q(".stack .sub")[0]);
+  Q(".sc").forEach(function(c){add(c.querySelector("h3"));add(c.querySelector("p"))});
+  add(Q(".twist .sub")[0]);Q(".risks li").forEach(function(e){add(e)});
+  Q(".check label span").forEach(function(e){add(e)});
+  add(Q(".move .sub")[0]);add(D.getElementById("ref"));add(Q(".copyrow>a.btn")[0]);
+  Q("details").forEach(function(d){add(d.querySelector("summary"));add(d.querySelector("p"))});
+  Q("footer p").forEach(function(e){add(e)});
+  var P=["pump<i>profile</i>", "A profile from @willygov", "Meme", "coins", "<em>explained.</em>", "pump.fun is a Solana launchpad where anyone can create a token and anyone can trade it. Look first, learn how it works, then decide.", "View my profile", "This links to my public pump.fun profile. Personal page, not affiliated with pump.fun.", "<b>Profile of</b>@willygov", "Scene 02 \u00b7 The launch", "Watch the <em>curve.</em>", "Each new coin is priced by a bonding curve. The price moves up as people buy.", "Scene 02 \u00b7 The graduation", "Know what <em>graduation</em> means.", "A coin that fills its curve moves to a regular liquidity pool. That does not make it safe.", "Scene 02 \u00b7 The wallet", "Guard your <em>seed phrase.</em>", "You trade from your own Solana wallet. Back up the phrase offline and never share it.", "Based on how pump.fun describes its own product and on public explainers.", "Take your time, especially before you connect a wallet.", "Check the address", "Open the link. Make sure the address says pump.fun before you connect anything.", "Set up a wallet", "Use a Solana wallet such as Phantom or Solflare. Save the recovery phrase offline.", "Browse before buying", "Read the token page, check the fees at pump.fun/fees, and start with a tiny amount.", "Most new coins fall fast. Here is what that does to your money.", "Most new tokens lose nearly all their value. You can lose everything you put in.", "Creators and early buyers can sell, which pushes the price down for everyone else.", "Fake sites and wallet drainers copy pump.fun. Never sign something you do not understand.", "Only use money you can afford to lose.", "I opened the link and checked that the address says pump.fun.", "I read the fees at pump.fun/fees and the terms of use.", "I saved my seed phrase offline and will never share it.", "I picked an amount I can afford to lose completely.", "I know that most new coins lose value and that a rising price is not a promise.", "Open my profile, or copy the link to use on another device.", "pump.fun/u/willygov", "Open pump.fun", "Is pump.fun available in my country?", "Availability and rules differ by country. Check pump.fun's terms and your local regulations before you connect a wallet.", "What is a bonding curve?", "A formula that sets a coin's price from how many tokens were bought. Buying raises the price and selling lowers it.", null, null, "Does this link cost me extra?", "No. It only opens my public profile. Fees are set by pump.fun, so check pump.fun/fees.", "Is this financial advice?", "No. It is a personal page with general information. Do your own research.", null, null, "Personal page. Not officially affiliated with pump.fun.", null],F=slots.map(function(s){return s[1]==="t"?s[0].firstChild.nodeValue:s[0].innerHTML});
+  var links=Q('a[href^="https://fomo.family"]'),title=D.title,desc=D.querySelector('meta[name=description]');
+  var M={fomo:{u:"https://fomo.family/r/willygov",rel:"noopener noreferrer sponsored",t:"Join FOMO with an invite from willygov",
+      d:desc.content,b:null},
+    pump:{u:"https://pump.fun/u/willygov",rel:"noopener noreferrer",t:"A guide to pump.fun from willygov",
+      d:"A plain guide to pump.fun, the Solana memecoin launchpad. How it works, and the risks first.",
+      b:["Most new coins lose value. Be careful.","Never share your seed phrase.","Check the address says pump.fun.","Hi! Tap me again.","Look around first."]}};
+  var bl=null;
+  function apply(m,push){
+    var c=M[m]||M.fomo;m=M[m]?m:"fomo";
+    slots.forEach(function(s,i){var v=m==="fomo"?F[i]:(P[i]===null?F[i]:P[i]);
+      if(s[1]==="t")s[0].firstChild.nodeValue=v;else s[0].innerHTML=v});
+    links.forEach(function(a){a.href=c.u;a.rel=c.rel});
+    var ref=D.getElementById("ref");ref.title=c.u;
+    D.title=c.t;desc.content=c.d;B.setAttribute("data-mode",m);
+    [].forEach.call(D.querySelectorAll("#mascot rect"),function(r){var f=r.getAttribute("fill");
+      if(f==="#c6f432"||f==="#5df2a0")r.setAttribute("fill",m==="pump"?"#5df2a0":"#c6f432")});
+    if(window.setLines&&c.b)window.setLines(c.b);else if(window.setLines)window.setLines(window.__fl);
+    Q(".mode button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.mode===m)});
+    D.documentElement.style.setProperty("--ml","");
+    if(push){var u;try{u=new URL(location.href)}catch(e){return}if(m==="pump")u.searchParams.set("mode","pumpfun");else u.searchParams.delete("mode");try{history.replaceState(null,"",u)}catch(e){}}
+  }
+  Q(".mode button").forEach(function(b){b.addEventListener("click",function(){apply(b.dataset.mode,true)})});
+  var q=null;try{q=new URLSearchParams(location.search).get("mode")}catch(e){}
+  var pick=D.getElementById("pick"),shell=Q("main,header.top,.bar");
+  function close(m){apply(m,true);pick.hidden=true;B.classList.remove("picking");
+    shell.forEach(function(e){e.removeAttribute("inert")});window.scrollTo(0,0)}
+  if(q==="pumpfun"||q==="pump"||q==="fomo"){apply(q==="fomo"?"fomo":"pump",false);pick.hidden=true}
+  else{apply("fomo",false);D.title="Pick a guide from willygov";B.classList.add("picking");shell.forEach(function(e){e.setAttribute("inert","")});
+    setTimeout(function(){var f=pick.querySelector("button");if(f)f.focus({preventScroll:true})},1500)}
+  [].forEach.call(pick.querySelectorAll("button"),function(b){b.addEventListener("click",function(){close(b.dataset.pick)})});
+})();
+</script>
+
+
+
+
 </body>
 </html>
