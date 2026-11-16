@@ -140,9 +140,9 @@ h2{font:800 clamp(1.6rem,5.4vw,2.4rem)/1.08 var(--head);letter-spacing:-.035em;m
   flex:1 1 260px;min-height:54px;display:flex;align-items:center;gap:10px;padding:0 8px 0 16px;
   background:var(--panel);border:2px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--ink)
 }
-.field code{flex:1;font:500 .95rem var(--pix);overflow-wrap:anywhere;padding:6px 0}
+.field code{flex:1 1 auto;min-width:0;font:500 clamp(.8rem,3.8vw,.95rem) var(--pix);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:6px 0}
 .copy{
-  min-height:40px;min-width:92px;padding:0 14px;border:2px solid var(--ink);border-radius:10px;background:var(--lime);color:#1d1a16;
+  min-height:40px;width:112px;flex:none;white-space:nowrap;padding:0 12px;border:2px solid var(--ink);border-radius:10px;background:var(--lime);color:#1d1a16;
   font:700 .88rem var(--head);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:background .2s,transform .12s
 }
 .copy:active{transform:scale(.95)}
@@ -357,7 +357,7 @@ summary::after{margin-right:10px}
       <p class="sub">Open the invite, or copy the link to use on another device.</p>
       <div class="copyrow">
         <div class="field">
-          <code id="ref">https://fomo.family/r/willygov</code>
+          <code id="ref" title="https://fomo.family/r/willygov">fomo.family/r/willygov</code>
           <button class="copy" id="copy" type="button" aria-label="Copy invite link">
             <svg class="cp" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
             <svg class="ok" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>
@@ -454,14 +454,18 @@ summary::after{margin-right:10px}
 
   /* copy field */
   var btn=document.getElementById("copy"),lab=document.getElementById("copyLabel"),u="https://fomo.family/r/willygov",tm;
-  function done(m){btn.classList.add("done");lab.textContent=m;clearTimeout(tm);tm=setTimeout(function(){btn.classList.remove("done");lab.textContent="Copy"},1800)}
+  function done(m){btn.classList.toggle("done",m==="Copied");lab.textContent=m;clearTimeout(tm);tm=setTimeout(function(){btn.classList.remove("done");lab.textContent="Copy"},1800)}
+  function legacy(){
+    var t=document.createElement("textarea");t.value=u;t.setAttribute("readonly","");
+    t.style.cssText="position:fixed;top:0;left:0;opacity:0";document.body.appendChild(t);
+    t.select();t.setSelectionRange(0,t.value.length);
+    var ok=false;try{ok=document.execCommand("copy")}catch(e){}
+    document.body.removeChild(t);return ok;
+  }
   btn.addEventListener("click",function(){
     if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(u).then(function(){done("Copied")},function(){done("Select")});
-    }else{
-      var r=document.createRange();r.selectNodeContents(document.getElementById("ref"));
-      var s=getSelection();s.removeAllRanges();s.addRange(r);done("Select");
-    }
+      navigator.clipboard.writeText(u).then(function(){done("Copied")},function(){done(legacy()?"Copied":"Failed")});
+    }else{done(legacy()?"Copied":"Failed")}
   });
 
   /* risk simulator */
